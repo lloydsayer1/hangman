@@ -23,32 +23,32 @@ class Hangman:
     
     def check_guess(self, guess): # checks to see if the users guess is in the selected hangman word
         guess = guess.lower()   
-        if guess in self.word:
+        if guess in self.word: # Checks if the character the user is currently guessing is in the randomized word
             print(f"Good guess! {guess} is in the word.")
-            listed_word = list(self.word)
+            listed_word = list(self.word) # Variable to turn the randomized word into a list
             for i in range(len(listed_word)):    
-                if guess == listed_word[i]:
-                    self.word_guessed[i] = guess
+                if guess == listed_word[i]: # Checks if the users guess is inside the list made up of the randomized word
+                    self.word_guessed[i] = guess # Adds the guess into the list of current correct inputs from the user
             self.num_letters = self.num_letters - 1
             print(self.word_guessed)
         else:
-            self.num_lives = self.num_lives - 1
+            self.num_lives = self.num_lives - 1  # Takes away a life if the user is not correct with their guess
             print(f"Sorry, {guess} is not in the word. Try again.")
             print(f"You have {self.num_lives} lives left.")
     
     def play_game(self):
         while True:
-            if self.num_lives == 0:
+            if self.num_lives == 0:  # Checks whether the user has lost or not
                 print("You lost")
                 break
-            elif self.num_letters > 0:
+            elif self.num_letters > 0: # Checks whether the game should keep continuing or not
                 self.ask_for_input()
             else:
-                print(f"Congratulations you have won the game, the word was {self.word}")
+                print(f"Congratulations you have won the game, the word was {self.word}") # Checks whether the user has won or not
                 break
 
 
-game = Hangman(word_list = ["apple", "cherry", "melon", "grape", "banana"], num_lives = 5)
+game = Hangman(word_list = ["apple", "cherry", "melon", "grape", "banana"], num_lives = 5) # Creates the object to run the game
 game.play_game()
 
 
