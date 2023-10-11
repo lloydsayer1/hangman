@@ -17,7 +17,9 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 
 ask_for_input() - Asks the user to enter a letter and checks if the input is only 1 character long and is contained within the alphabet.
 
-check_guess() - Takes the users validated input from ask_for_input and prints whether that letter is in the word they need to guess or not.
+check_guess() - Takes the user's validated input from ask_for_input and prints whether that letter is in the word they need to guess or not.
+
+play_game() - Runs the game, checking if the user has won or lost the game, depending on the lives remaining and amount of letters left to guess.
 
 --------------------------------------------------------
 
@@ -35,6 +37,10 @@ Clone the repo, run the programs using Python!
 milestone_2.py contains the code for milestone_2
 
 milestone_3.py contains the code for milestone_3
+
+milestone_4.py contains the code for milestone_4
+
+milestone_5.py contains the code for milestone_5
 
 --------------------------------------------------------
 ## License Information
